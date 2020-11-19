@@ -1,0 +1,52 @@
+# Project: gzcl
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o use.o dele.o add.o calculate.o imput_data.o menu.o search.o sort.o
+LINKOBJ  = main.o use.o dele.o add.o calculate.o imput_data.o menu.o search.o sort.o
+LIBS     = -L"D:/My_c/Dev-Cpp/MinGW64/lib" -L"D:/My_c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/My_c/Dev-Cpp/MinGW64/include" -I"D:/My_c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/My_c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/My_c/Dev-Cpp/MinGW64/include" -I"D:/My_c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/My_c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/My_c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = gzcl.exe
+CXXFLAGS = $(CXXINCS) -Wextra -g3
+CFLAGS   = $(INCS) -Wextra -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+use.o: use.c
+	$(CC) -c use.c -o use.o $(CFLAGS)
+
+dele.o: dele.c
+	$(CC) -c dele.c -o dele.o $(CFLAGS)
+
+add.o: add.c
+	$(CC) -c add.c -o add.o $(CFLAGS)
+
+calculate.o: calculate.c
+	$(CC) -c calculate.c -o calculate.o $(CFLAGS)
+
+imput_data.o: imput_data.c
+	$(CC) -c imput_data.c -o imput_data.o $(CFLAGS)
+
+menu.o: menu.c
+	$(CC) -c menu.c -o menu.o $(CFLAGS)
+
+search.o: search.c
+	$(CC) -c search.c -o search.o $(CFLAGS)
+
+sort.o: sort.c
+	$(CC) -c sort.c -o sort.o $(CFLAGS)
